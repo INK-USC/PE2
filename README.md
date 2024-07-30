@@ -11,4 +11,8 @@ conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=
 pip install -r requirements.txt
 ```
 
-### Run
+### Data
+
+* We uploaded all preprocessed data files in `/data`. 
+* We included scripts to download and preprocess the data in `/data/preprocess`.
+
