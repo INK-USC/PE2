@@ -10,8 +10,8 @@ python cli.py \
  --model zeroshotcot \
  --task bbh --subtask ${subtask} \
  --data_dir data/bbh/${subtask} \
- --output_dir output/bbh/${subtask}/${method}/ \
- --task_model openai_gpt35_turbo_instruct \
+ --output_dir output/bbh/${subtask}/${method}_mistral-7b-instruct/ \
+ --task_model mistralai/Mistral-7B-Instruct-v0.2 \
  --optim_model openai_gpt4_turbo \
  --n_beam 4 \
  --n_expand 4 \
