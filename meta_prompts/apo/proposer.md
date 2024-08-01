@@ -18,5 +18,5 @@ Based on the above information, I wrote an improved prompt. The total length of 
 {{/user~}}
 
 {{#assistant~}}
-The improved prompt is {{gen 'new_prompt' temperature=0.0}}
+{{gen 'new_prompt' temperature=0.0}}
 {{/assistant~}}
