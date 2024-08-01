@@ -35,16 +35,16 @@ def _load_prompt(datafile: str):
     return prompt
 
 def get_llm(llm_name):
-    assert llm_name in ["openai_gpt35", "openai_td003", "openai_gpt4", "openai_gpt4_32k", "openai_gpt4_turbo"]
+    assert llm_name in ["openai_gpt35", "openai_gpt4", "openai_gpt4_turbo", "openai_gpt4o", "openai_gpt4o_mini"]
     
     if llm_name == "openai_gpt35":
         llm = guidance.llms.OpenAI("gpt-3.5-turbo", max_retries=100, max_calls_per_min=10)
-    elif llm_name == "openai_td003":
-        llm = guidance.llms.OpenAI("text-davinci-003", max_retries=100, max_calls_per_min=10)
-    elif llm_name == "openai_gpt4":
+    elif llm_name == "openai_gpt4": # we were using gpt-4-0613 for the experiments in the paper
         llm = guidance.llms.OpenAI("gpt-4", max_retries=100, max_calls_per_min=1)
-    elif llm_name == "openai_gpt4_32k": # seems not available...
-        llm = guidance.llms.OpenAI("gpt-4-32k", max_retries=100, max_calls_per_min=1)    
-    elif llm_name == "openai_gpt4_turbo": # seems not available... # gpt-4-1106-preview
-        llm = guidance.llms.OpenAI("gpt-4-0125-preview", max_retries=100, max_calls_per_min=1, chat_mode=True)      
+    elif llm_name == "openai_gpt4_turbo": # we were using gpt-4-0125-preview for the experiments in the paper
+        llm = guidance.llms.OpenAI("gpt-4-0125-preview", max_retries=100, max_calls_per_min=3, chat_mode=True)
+    elif llm_name == "openai_gpt4o": 
+        llm = guidance.llms.OpenAI("gpt-4o", max_retries=100, max_calls_per_min=3, chat_mode=True)    
+    elif llm_name == "openai_gpt4o_mini": 
+        llm = guidance.llms.OpenAI("gpt-4o-mini", max_retries=100, max_calls_per_min=10, chat_mode=True)    
     return llm
